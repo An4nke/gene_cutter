@@ -15,7 +15,7 @@ use CM::hmmlysr_global qw($in $out $score $evalue $filter @scores @evalues);
 
 ## parameters
 foreach my $para (@ARGV){
-	if ($para =~m/--?i(?:n)?=(.+)/)						{ $in = $1; }				# input directory for processing						-i | --in			for $in
+	if ($para =~m/--?i(?:n)?=(.+)/)					{ $in = $1; }				# input directory for processing						-i | --in			for $in
 	elsif ($para =~m/--?o(?:ut)?=(.+)/) 				{ $out = $1; } 				# output path of results								-o | --out			for $out
 	elsif ($para =~m/--?s(?:core)?=(.+)/)				{ $score = $1; }			# minimum score for output								-s | --score		for $score
 	elsif ($para =~m/--?e(?:value)?=(.+)/)				{ $evalue = $1; }			# minimum evalue for output								-e | --evalue		for $evalue
@@ -47,10 +47,6 @@ if ($in) {
 		}
 		close $LOG;
 	}
-}
-
-foreach (@scores) {
-	#print "$_\n";
 }
 
 
